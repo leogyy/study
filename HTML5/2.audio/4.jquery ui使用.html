@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<title>HTML5</title>
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<style>
+
+	</style>
+</head>
+<body>
+<audio id="musicEl" autoplay src="source/chengdu.mp3"></audio>
+<div id="my-slider"></div>
+<script src="js/jquery.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script>
+$(document).ready(function(){
+  var music = document.getElementById('musicEl');
+  var proNum = 0;
+	// 音乐播放，进度条自动滑动
+	music.addEventListener('timeupdate',function(){
+		proNum = Math.floor(music.currentTime / music.duration * 100);
+		console.log(proNum)
+		$('#my-slider').slider('option',{
+			value:proNum
+		})
+	},false);
+//创建进度条
+//滑动的时候，设置音乐当前位置
+	$('#my-slider').slider({
+		orientation:'horizontal',
+		max:100,
+		value:0,
+		slide:function(event,ui){
+			music.pause();
+			music.currentTime = music.duration * (ui.value / 100 );
+			console.log('值：'+ ui.value)
+		},
+		stop:function(event,ui){
+			music.play();
+		}
+	});
+
+
+})
+
+
+</script>
+</body>
+</html>

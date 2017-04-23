@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<title>HTML5</title>
+	<style>
+    #btn-list{
+			width:800px;
+			margin:0 auto;
+			margin-top:100px;
+		}
+		#btn-list span{
+			display: block;
+			width:100px;
+			height:100px;
+			float:left;
+			margin-right:10px;
+			font-size:60px;
+			color:#fff;
+			text-align: center;
+			line-height:100px;
+		}
+		#btn-list span:nth-child(1){
+			background-color: red;
+		}
+		#btn-list span:nth-child(2){
+			background-color: orange;
+		}
+		#btn-list span:nth-child(3){
+			background-color: yellow;
+		}
+		#btn-list span:nth-child(4){
+			background-color: green;
+		}
+		#btn-list span:nth-child(5){
+			background-color: #00fffc;
+		}
+		#btn-list span:nth-child(6){
+			background-color: #006cff;
+		}
+		#btn-list span:nth-child(7){
+			background-color: pink;
+		}
+
+	</style>
+</head>
+<body>
+<div id="btn-list">
+	<span>Q</span>
+	<span>W</span>
+	<span>E</span>
+	<span>R</span>
+	<span>T</span>
+	<span>Y</span>
+	<span>U</span>
+</div>
+<script>
+ window.onload = function(){
+   var btnList = document.getElementById('btn-list');
+	 var btns = btnList.getElementsByTagName('span');
+	 var musicArr = [
+		 "source/yinjie/01.mp3",
+		 "source/yinjie/02.mp3",
+		 "source/yinjie/03.mp3",
+		 "source/yinjie/04.mp3",
+		 "source/yinjie/05.mp3",
+		 "source/yinjie/06.mp3",
+		 "source/yinjie/07.mp3"
+	 ];
+	 81
+
+  var musicArr2 = [
+		{
+			"keyStr": "Q",
+			"musicSrc":"source/yinjie/01.mp3"
+		},
+		{
+			"keyStr": "W",
+			"musicSrc":"source/yinjie/02.mp3"
+		},
+		{
+			"keyStr":"E",
+			"musicSrc":"source/yinjie/03.mp3"
+		},
+		{
+			"keyStr":"R",
+			"musicSrc":"source/yinjie/04.mp3"
+		},
+		{
+			"keyStr":"T",
+			"musicSrc":"source/yinjie/05.mp3"
+		},
+		{
+			"keyStr":"Y",
+			"musicSrc":"source/yinjie/06.mp3"
+		},
+		{
+			"keyStr":"U",
+			"musicSrc":"source/yinjie/07.mp3"
+		},
+
+	];
+
+	console.log(musicArr2[0].musicSrc)
+
+	 for(var i = 0; i < btns.length; i++){
+		 btns[i].index = i;
+		 btns[i].onclick = function(){
+			 console.log(musicArr[this.index]);
+        var music = new Audio();
+				music.src = musicArr[this.index];
+				music.play();
+		 }
+	 }
+
+   document.onkeydown = function(e){
+		 var c = String.fromCharCode(e.keyCode);
+		 for(var i=0; i < musicArr2.length;i++){
+			 if(c == musicArr2[i].keyStr){
+				 var music = new Audio();
+				 music.src = musicArr2[i].musicSrc;
+				 music.play();
+			 }
+		 }
+	 }
+
+ }
+</script>
+</body>
+</html>

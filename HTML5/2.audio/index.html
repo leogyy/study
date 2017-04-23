@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<title>HTML5</title>
+	<style>
+  #playBtn,#pauseBtn{
+		display: block;
+		width:30px;
+		height:30px;
+		line-height: 30px;
+		text-align: center;
+		border-radius: 50%;
+		background-color: orange;
+		color:#fff;
+		font-size:12px;
+	}
+	</style>
+</head>
+<body>
+	<h1 id="music-time"></h1>
+	<span id="playBtn">播放</span>
+	<span id="pauseBtn">暂停</span>
+  <audio id="musicEl"  src="source/chengdu.mp3"></audio>
+
+<script>
+ window.onload = function(){
+	 var musicT = document.getElementById('music-time');
+	 var music = document.getElementById('musicEl');
+	 music.volume = 0.5; //设置音量为0.5
+	 var allTime = music.duration; //音乐时长
+	 console.log(allTime);
+	//  转化格式 324.232 转成 5:24
+	 var minu = Math.floor(Math.floor(allTime) / 60);
+	 var sec = Math.floor(allTime) % 60;
+	 var timeStr = minu + ':' + sec;
+
+	 musicT.innerHTML = timeStr
+	 console.log(timeStr);
+
+   var playBtn = document.getElementById('playBtn');
+	 var pauseBtn = document.getElementById('pauseBtn');
+
+	 playBtn.onclick = function(){
+		 music.play();
+	 }
+
+	 pauseBtn.onclick = function(){
+		 music.pause();
+	 }
+
+
+ }
+</script>
+</body>
+</html>
