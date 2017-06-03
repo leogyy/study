@@ -1,0 +1,24 @@
+{
+  "name": "node-test",
+  "version": "1.0.0",
+  "description": "this is a node project",
+  "main": "date.js",
+  "dependencies": {
+    "moment": "^2.18.1"
+  },
+  "devDependencies": {
+    "react": "^15.5.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u001b\u0001"
+  },
+  "keywords": [
+    "\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C"
+  ],
+  "author": "leo",
+  "license": "ISC"
+}
