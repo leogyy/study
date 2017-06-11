@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>es6</title>
+  </head>
+  <body>
+
+  <script src="../js/browser.min.js"></script>
+  <script>
+    let data = {
+      'name' : '李白',
+      'job' : '剑客',
+      test: function(){
+        console.log('aaa');
+      }
+    }
+
+    // console.log(data.name);
+
+    // ES6写法
+    let {job,name,test} = data;
+    console.log(name);
+    console.log(job);
+    test();
+
+
+  </script>
+  </body>
+</html>

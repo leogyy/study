@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>es6</title>
+    <style>
+    li{background-color: orange;}
+    </style>
+  </head>
+  <body>
+  <ul id="list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+  </ul>
+  <script src="../js/browser.min.js"></script>
+  <script>
+   var list = document.getElementById('list');
+   var listLi = list.getElementsByTagName('li');
+
+  //  for(var i = 0; i < listLi.length; i++){
+  //    listLi[i].index = i;
+  //    listLi[i].onclick = function(){
+  //      console.log(this.index);
+  //    }
+  //  }
+
+
+ // let声明的i，只在本轮循环有效，每一次i都新的变量
+  for(let i = 0; i < listLi.length; i++){
+    listLi[i].onclick = function(){
+      console.log(i)
+    }
+  }
+
+  </script>
+  </body>
+</html>
