@@ -31,11 +31,11 @@
     * Node是javascript运行环境，对ES6 兼容性更高
 
   7. babel转码器-http://babeljs.cn/
-    1. babel是一个广泛使用的 ES6 转码器
+    * babel是一个广泛使用的 ES6 转码器
     ，可以将ES6代码 转成 ES5代码，
     从而在现代大多数浏览器中执行
-    2. 使用了babel可以使用ES6 编写代码
+    * 使用了babel可以使用ES6 编写代码
   8. 浏览器中使用babel
-    1. 从babel6.0开始，不再提供浏览器版本
-    2. 使用 babel 5.x
-      3. 需要引入 babel浏览器版本    browser.min.js
+    * 从babel6.0开始，不再提供浏览器版本
+    * 使用 babel 5.x
+    * 需要引入 babel浏览器版本     browser.min.js

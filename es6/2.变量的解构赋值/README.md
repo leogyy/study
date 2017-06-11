@@ -52,4 +52,6 @@
           job : '剑客'
         }
       }
+
+      let {name,job} = test();
      ```

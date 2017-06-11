@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>es6</title>
+  </head>
+  <body>
+  <div id="test"></div>
+  <div id="test2"></div>
+  <script src="../js/browser.min.js"></script>
+  <script>
+   var test = document.getElementById('test');
+   var test2 = document.getElementById('test2');
+
+   let name = '李白';
+   let job = '诗人';
+
+  //  let t = '<h1> ' + name +'</h1><p> '
+  //  + job + '</p>';
+
+  // ES6写法
+  //单行文本
+  let str = `hello`;
+  // 多行文本
+  let str2 = `This is
+  Tom,how are you?`;
+  // 嵌入变量
+  let t = `<h1>${name}</h1>
+  <p>${job}</p>`;
+
+  let data = {
+    "title" : "大话西游",
+    "actor" : "周星驰/朱茵",
+    "date" : "1999",
+    "direction" : "周星驰"
+  }
+
+  let {title, actor, date, direction} = data;
+
+  let movieStr = `
+  <h1>片名：${title}</h1>
+  <p>演员：${actor}</p>
+  <span>上映：${date}</span>
+  <p>导演：${direction}</p>`;
+
+  test2.innerHTML = movieStr;
+
+
+  console.log(str2);
+
+   test.innerHTML = t;
+
+
+
+  </script>
+  </body>
+</html>
