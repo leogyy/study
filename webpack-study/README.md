@@ -1,81 +1,57 @@
 ### webpack 2.x
-  1. webpack 是一个现代的 JavaScript 应用程序的模块打包器<br>
-    * webpack可以看做是模块打包机：
-    * 它做的事情是，分析你的项目结构，
-    * 找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（less），
-    * webpack 把所有资源(css,图片)以模块化处理
-    * 并将其打包为合适的格式以供浏览器使用<br>
-    ![image](https://github.com/highmind/Study/raw/master/preview-img/webpack.png)
-  2. 安装
-    ``` JavaScript
-      npm install webpack --save-dev  //安装webpack
-      //使用 webpack -v,查看是否安装成功,不成功，则 全局安装
-      npm install webpack -g
-    ```
-  3. 基本配置
-    * webpack需要一个 js 配置文件 webpack.config.js
-    * 常用配置：
-      ``` JavaScript
-      module.exports = { // nodeJS模块语法
 
-        devtool: '', //sourcemap配置，方便错误调试
+  1. 搭建基于 webpack构建的项目目录
+    * 编译es6  
+    * 处理 css文件
+    * 处理 图片
+    * 处理 字体文件
+    * 开启一个 本地测试服务器
+  2.安装 webpack和所需插件
+    * webpack
+    * webpack-dev-server
+    * loader加载器：
+      1. style-loader
+      2. url-loader
+      3. css-loader
+      4. file-loader
+    * babel相关
+      1. babel-core
+      2. babel-loader"
+      3. babel-plugin-import
+      4. babel-preset-es2015
+    * 处理html
+      1. html-webpack-plugin
+  3. 编写 webpack.config.js 配置文件
+  4. 目录规划
+    >> project(项目名)
+    >>> node_modules
+    >>> webpack.config.js
+    >>> package.json
+    >>> src (源代码目录)
+    >>>> index.js (项目入口文件)
+    >>> dist(打包文件目录)
+  5. 开发过程
+    1. 项目根目录 执行       webpack-dev-server
 
-        entry: {    // 入口配置
+  6. 打包或者上线时
+    * webpack -p  
 
-        },
+  7. webpack两种配置文件
+    * 开发模式 webpack.config.dev.js
+      1. devtool调试模式
+      2. webpack-dev-server
+    * 生产模式 webpack.config.prod.js
+      1. 没有devtool调试模式
+  8. npm scripts
+    * package.json 里面的 scripts属性
+    * 可以快捷的执行命令
+  9. 开发模式script
+    *     "start": "webpack-dev-server --config webpack.config.dev.js"
+  10. 打包模式script
+    * "clean" : "rimraf dist", //清除dist
+    *     "build":"rimraf dist & webpack --config webpack.config.prod.js -p"
 
-        output: {  //出口配置
-
-        },
-
-        module: {  //加载器配置
-          rules: []
-        },
-
-        plugins: [ //插件配置
-
-        ],
-
-        devServer:{ // webpack-dev-server
-
-        }
-
-      }
-      ```
-
-  4. 加载器(loader)
-
-    * 加载器(loader)是对应用程序中资源文件进行转换。比如:ES6 转 ES5
-    * 常用loader
-
-      1. JS处理
-        * 所需node包
-          1. babel
-          ``` JavaScript
-          "babel-core": "^6.23.1",
-          "babel-plugin-import": "^1.1.1",
-          "babel-loader": "^6.3.2",
-          "babel-preset-es2015": "^6.22.0",
-          "babel-preset-stage-0": "^6.22.0",
-          ```
-      2. css样式处理
-          ``` JavaScript
-          "css-loader": "^0.26.2",
-          "style-loader": "^0.13.2",
-          ```  
-      3. 图片处理
-         ``` JavaScript
-         "url-loader": "^0.5.8"
-         ```
-      4. 文件处理
-        ``` JavaScript
-        "file-loader": "^0.10.1"
-        ```
-
-  5. 插件
-    * html-webpack-plugin //处理html，比如讲bundle.js插入到页面中
-  6. webpack-dev-server
-    * 安装
-    ``` JavaScript
-    npm install webpack-dev-server
-    ```
+  11. css使用
+    * import './css/index.css'
+  12. 本地图片使用
+     * require('./images/a.jpg')
