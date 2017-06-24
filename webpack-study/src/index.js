@@ -3,8 +3,9 @@ import head from './head';
 import './css/iconfont.css';
 import './css/index.css';
 head();
+var url = require('./images/cover.jpg')
+var  imgStr = `<img src=${url} />
+<i class="iconfont icon-zhuye"></i>
+`;
 
-let imgStr = `<img src=${require('./images/cover.jpg')} />`
-let icon =  `<i class="iconfont icon-zhuye"></i>`;
-
-document.body.innerHTML = imgStr+icon;
+document.body.innerHTML = imgStr;
