@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>touch</title>
+  </head>
+  <body>
+  <script>
+  window.onload = function(){
+
+    document.addEventListener('touchstart',function(){
+      console.log('....touchstart.....');
+    });
+
+    document.addEventListener('touchmove',function(e){
+      console.log(e.targetTouches[0].clientX);
+      console.log('...move...')
+    })
+  }
+  </script>
+  </body>
+</html>

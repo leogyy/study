@@ -32,10 +32,15 @@
     >>>> index.js (项目入口文件)
     >>> dist(打包文件目录)
   5. 开发过程
-    1. 项目根目录 执行       webpack-dev-server
+    1. 项目根目录 启动， 执行
+    ``` JavaScript
+    npm start
+    ```
+    2. 开发完成以后，打包执行
+    ``` JavaScript
+    npm run build
+    ```
 
-  6. 打包或者上线时
-    * webpack -p  
 
   7. webpack两种配置文件
     * 开发模式 webpack.config.dev.js
