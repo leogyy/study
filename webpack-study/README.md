@@ -19,6 +19,7 @@
       2. babel-loader"
       3. babel-plugin-import
       4. babel-preset-es2015
+    * 需要配置 .babelrc文件  
     * 处理html
       1. html-webpack-plugin
   3. 编写 webpack.config.js 配置文件

@@ -17,13 +17,14 @@
     "webpack-dev-server": "^2.5.0"
   },
   "devDependencies": {
+    "babel-preset-stage-0": "^6.24.1",
     "rimraf": "^2.6.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --config webpack.config.dev.js",
-    "clean" : "rimraf dist",
-    "build":"rimraf dist&webpack --config webpack.config.prod.js -p" 
+    "clean": "rimraf dist",
+    "build": "rimraf dist&webpack --config webpack.config.prod.js -p"
   },
   "author": "",
   "license": "ISC"
