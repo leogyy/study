@@ -1,0 +1,9 @@
+.item{
+  display: flex;
+  width:100%;
+  border:1px solid red;
+}
+.item-left{flex:1;padding:0 6px;}
+.item-center{flex:3;padding:0 6px;}
+.item-right{flex:1;padding:0 6px;}
+.more-btn{margin-top:40px;}

@@ -171,6 +171,7 @@
       <CommentList data={msgData}  />
       ```
       * 低耦合 高内聚
+
 ### React表单
     * 获取表单数据
       1. 表单添加 ref属性
@@ -200,3 +201,42 @@
     * 兄弟组件间通信
       1. 通过父组件 进行 中间转化
       2. 通过redux等 框架
+
+### React组件开发- Icon图标组件
+    * 使用 iconfont 字体图标技术
+    * webpack需要配置 对字体文件的支持
+    * 原理：
+      1. 根据不同的props 生成不同的类名
+      ``` JavaScript
+      let fType = `iconfont icon-${type}`;
+      ```
+      2. 根据props生成 style
+      ``` JavaScript
+      let styleData = {
+        color:this.props.color,
+      }
+      ```
+      3. 组件的 defaultProps设置 某些属性的默认值，用于调用组件的默认值
+      ``` JavaScript
+      static defaultProps = {
+        color:'#666666'  //设置组件默认值
+      }
+      ```
+    * 最终效果：
+      ``` JavaScript
+      <Icon type="user" color="red" />
+      <Icon type="film" />
+      ```
+
+### React props高级用法
+    * props可以接收 字符串,数字,方法
+    * 还可以 接收 一个组件或者 JSX
+    * 可以 将组件的一部分  从组件分离，减少耦合
+    * 例如
+    ``` JavaScript
+    <Item
+    leftContent={leftData}
+    centerContent={centerData}
+    rightContent={rightData}
+    />
+    ```
