@@ -156,3 +156,47 @@
 
 ### React 组件的嵌套和组合
     1. 组件之间可以互相嵌套组合，拼成一个大的组件
+
+### React 留言板
+    1. 组件划分
+      * CommentApp 总父组件
+      * CommentInput 输入组件
+      * CommentList  留言列表组件
+      * Comment  留言项组件
+    2. CommentList留言列表组件 <br/>
+      * 数据来自外部
+      * 渲染和逻辑在组件内部实现
+        1. 通过this.props.自定义属性名，获取外部传入的数据
+      ``` JavaScript
+      <CommentList data={msgData}  />
+      ```
+      * 低耦合 高内聚
+### React表单
+    * 获取表单数据
+      1. 表单添加 ref属性
+        ``` JavaScript
+        <input ref="username" type="text" />
+        ```
+      2. 可以通过 this.refs.username使用
+
+    * 受控表单组件 (官方建议使用)
+      1. 设置了 value的input就是受控组件
+      2. input变为了 readonly，不能修改值
+      3. 如果想修改值，需要使用 onChange事件
+      4. e.target.value 获取表单值
+
+    * 非受控表单组件
+      1. 表单不设置value值，则是非受控组件
+      2. 可以通过 defaultValue 设置默认值
+
+
+### React 组件间通信
+    * 父组件与子组件 通信
+      1. this.props 通过子组件 传入数据和方法
+
+    * 子组件和父组件 通信
+      1. 回调函数，父组件将定义的方法，传入 子组件的props，子组件内部进行调用
+
+    * 兄弟组件间通信
+      1. 通过父组件 进行 中间转化
+      2. 通过redux等 框架
