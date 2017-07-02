@@ -7,10 +7,12 @@ class Detail extends Component{
 
 
   render(){
+    let id = this.props.params.id;
     return(
       <div>
        Detail
        <Link to="/">返回首页</Link>
+       {id}
       </div>
     )
   }

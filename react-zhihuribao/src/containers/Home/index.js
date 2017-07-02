@@ -12,7 +12,7 @@ class Home extends Component{
       <div>
        Home
        <Link activeClassName="active" to="/">首页</Link>
-       <Link to="/detail">详情页</Link>
+       <Link to="/detail/123">详情页</Link>
        <Link to="/navpage">导航页</Link>
       </div>
     )
