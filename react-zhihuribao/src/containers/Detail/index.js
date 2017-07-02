@@ -1,6 +1,6 @@
 import React,{Component,PropTypes} from 'react';
 
-class App extends Component{
+class Detail extends Component{
   constructor(props){
     super(props);
   }
@@ -9,8 +9,7 @@ class App extends Component{
   render(){
     return(
       <div>
-       <h4>这是导航组件</h4>
-       {this.props.children}
+       Detail
       </div>
     )
   }
@@ -18,4 +17,4 @@ class App extends Component{
 
 }
 
-export default App;
+export default Detail;
