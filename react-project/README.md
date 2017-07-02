@@ -240,3 +240,118 @@
     rightContent={rightData}
     />
     ```
+
+### React 组件生命周期
+    1. 初始化
+      * constructor
+        1. this.state 设置 组件的 初始状态
+    2. 挂载阶段
+      * React 将组件渲染， 并且构造DOM元素，然后 塞入页面
+      中的过程，称为 组件挂载阶段
+        1. componentWillMount()
+          * 组件挂载开始之前，调用render方法之前，DOM元素没有插入页面
+        2. componentDidMount()
+          * 组件挂载完成之后，DOM元素已经插入页面中
+          * 一般在此方法中，通过ajax请求远程数据
+
+    3. 更新阶段
+      * 组件在挂载到页面中以后，有时候 会响应 交互等，
+      根据新的数据，改变自身状态或者形态，
+      * 例如，一个 列表list组件，在新的数据变化时候，
+      会变长，加载更多数据，
+      * 这种阶段 称为 组件的 更新阶段
+
+      * shouldComponentUpdate(nextProps,nextState)
+        1. 通过此方法控制组件是否需要重新渲染
+        2. 返回 false 组件不会重新渲染
+        3. 返回 true  组件重新渲染
+
+      * componentWillReciveProps(nextProps)  
+        1. 组件从父组件接收到新的 props 之前调用
+
+      * componentDidUpdate()
+        1. 组件重新渲染并且 变更到真实的DOM 以后调用
+        2. 此时可以访问到 新的 DOM元素
+        3. 可以复用组件
+     4. 卸载阶段
+        1. componentWillUnmount()
+        2. 组件对应的 DOM元素 从页面中 删除之前调用
+
+### React组件三种写法
+    1. ES5写法
+    2. ES6 class写法
+    3. 纯函数
+### React 知乎日报web版
+    1. 目录规划
+      >project
+      >> src
+      >>> components  所有的 木偶组件
+      >>>> Button 按钮组件
+      >>>> Icon 图标组件
+      >>>> List 列表组件
+
+      >>> containers  所有 容器/页面组件
+      >>>> Home 组件
+      >>>> Detail 组件
+
+    3. 组件分类
+        1. 木偶组件 没有生命周期方法，数据来自于 外部
+        2. 容器组件  有生命周期方法，由多个木偶组件组成，
+        把数据通过木偶组件的 props 传入
+
+### React-router 路由管理库
+   1. 路由：根据不同的网址 ，展示不同的界面
+      * www.xxx.com/Home/   
+      * www.xxx.com/film/
+   2. 路由逻辑
+      * /      => App组件 所有页面都会加载的组件 放到App组件
+      * /home  => Home组件
+      * /detail => Detail组件
+      * navpage =>  NavPage组件
+   3. 使用方法
+      1. 配置 route 路由规则
+        ``` JavaScript
+        <Route path="/" component={App}>
+          <Route path="home" component={Home} />
+          <Route path="detail" component={Detail} />
+          <Route path="navpage" component={NavPage} />
+        </Route>
+        ```
+      2. 改造入口文件，引入路由规则，并应用
+        ``` JavaScript
+        import {Router, hashHistory} from 'react-router';
+        import Routes from './routes/';
+        const rootEl = document.getElementById('app');
+
+        ReactDOM.render(
+          <Router history={hashHistory} routes={Routes}>
+          </Router>
+          , rootEl);
+        ```
+      3. 改造 App组件
+        * 加入 this.props.children
+
+### React-router 切换路由
+    1. Link组件
+      * activeClassName 当前路由下的  匹配的 Link的样式
+
+### React-router 路由模式
+    1. hashHistory   有 #
+    2. browserHistory  没有#，但是需要服务器配置
+### react-router  Redirect
+    * from
+    * to
+
+### React-router 路由传参
+    * 修改路由
+    ``` JavaScript
+    <Route path="detail/:id" component={Detail} />
+    ```
+    * Detail组件里使用以下方法获取
+    ``` JavaScript
+    this.props.params.id
+    ```
+
+### this.props.children
+    1. 表示 组件的 所有 子节点
+    2. 可以使用React.Children.map来遍历子节点
