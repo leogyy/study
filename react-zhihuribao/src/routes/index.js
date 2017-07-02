@@ -6,9 +6,10 @@ import {App, Home, Detail, NavPage} from '../containers';
 
 export default (
   <Route path="/" component={App}>
+    <IndexRoute component={Home} />
     <Route path="home" component={Home} />
     <Route path="detail" component={Detail} />
-    <Route path="navpage" component={NavPage} />
+    <Route path="navpage" component={NavPage} /> 
   </Route>
 
 )

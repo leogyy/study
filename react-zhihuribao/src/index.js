@@ -2,8 +2,8 @@
 import React from 'react'; //react 核心库
 import ReactDOM from 'react-dom'; //操作dom
 
-import {Router, hashHistory} from 'react-router';
-import Routes from './routes/';
+import {Router, hashHistory, browserHistory} from 'react-router';
+import Routes from './routes/'; //导入路由配置
 
 const rootEl = document.getElementById('app');
 
