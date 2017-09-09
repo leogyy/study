@@ -40,6 +40,7 @@
   },
   "homepage": "",
   "devDependencies": {
+    "axios": "^0.15.3",
     "rimraf": "^2.6.1"
   }
 }

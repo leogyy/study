@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<title>小球动画</title>
+	<style>
+ 		.cir1,.cir2,.cir3{width:100px;height:100px;
+		background-color: red;border-radius:100px;}
+		.cir1{position:absolute;left:0;top:20px;}
+		.cir2{position:absolute;left:0;top:140px;}
+		.cir3{position:absolute;left:0;top:260px;}
+	</style>
+</head>
+<body>
+<div class="cir1"></div>
+<div class="cir2"></div>
+<div class="cir3"></div>
+<script src="js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.cir1').animate({
+		left : '500px',
+	}, 1500, function(){
+		$('.cir2').animate({
+			left :'500px'
+		},1500, function(){
+			$('.cir3').animate({
+				left : '500px'
+			},1500, function(){
+				$('.cir1').animate({
+					left :0
+				}, 1500)
+			})
+		})
+	});
+})
+</script>
+</body>
+</html>

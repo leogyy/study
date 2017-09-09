@@ -40,7 +40,7 @@
 
 ### React 组件语法
   1. ES5方式
-  2. ES6 class方式\
+  2. ES6 class方式
 
 ### React中使用样式
   1. 导入样式文件
@@ -355,3 +355,69 @@
 ### this.props.children
     1. 表示 组件的 所有 子节点
     2. 可以使用React.Children.map来遍历子节点
+
+### ajax 跨域问题
+  1. http://localhost/api.php
+  ``` json
+  {
+    "id":"1",
+    "name":"\u674e\u767d",
+    "job":"\u8bd7\u4eba"
+  }
+
+  ```
+  2. 浏览器的同源策略
+  3. 跨域：只要协议、域名、端口任何一个不同，都会触发同源策略，都当做不用域
+  4. 解决方案：
+    1. 方法1： 使用jsonp
+    2. 方法2： 服务器端设置以下 access-control-allow-origin
+    3. 方法3：使用代理
+  5. jsonp使用
+    * jquery中 ajax 的jsonp使用
+      1. dataType设置为 jsonp
+      2. 后端修改接口,接收前端传过来的callback参数，并和json拼接输出
+      ``` php
+      echo $callback . '(' . $json . ')';
+      ```
+  6. jsonp原理：js script标签 引入文件的，跨域特性来实现
+
+### React中发起ajax请求
+  1. 常用ajax库
+    * axios(支持promise)
+    * fetch(支持promise)
+  2. axios使用
+    * 安装
+    ``` javascript
+    npm install axios --save-dev
+    ```
+  3. 前后端分离模式
+    * 开发环境和 接口服务器不在一个域
+      1. 开发环境： localhost:3000
+      2. 接口服务： localhost:8080
+    * 出现跨域问题
+    * 可以使用webpack-dev-server的 代理
+
+  4. webpack-dev-server
+    * 配合webpack开启本地服务
+    * 支持 自定义端口号
+    * 支持 配置 proxy(代理)，转发请求
+  5. react组件中 一般在 componentDidMount生命周期方法中，发ajax请求
+
+### js回调地狱(了解)
+  1. 在js回调函数，调用函数，函数中又包含回调函数，层层调用，代码可读性下降
+
+### Promise对象(了解)
+  1. ES6 新增对象，可以优雅解决回调函数问题
+  2. ``` javascript
+        var promise = new Promise(function(resolve, reject) {
+      // ... some code
+
+      if (/* 异步操作成功 */){
+        resolve(value);
+      } else {
+        reject(error);
+      }
+      });
+     ```
+  3. 可以使用 then方法，执行后续操作，减少回调函数
+### async 函数解决异步操作(了解)  

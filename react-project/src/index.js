@@ -6,4 +6,4 @@ const rootEl = document.getElementById('app');
 import LifeTest from './components/LifeTest/';
 
 
-ReactDOM.render(<LifeTest />, rootEl);
+ReactDOM.render(<CommentApp />, rootEl);

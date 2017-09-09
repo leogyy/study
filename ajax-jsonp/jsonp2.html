@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<title>ajax跨域</title>
+	<style>
+
+	</style>
+</head>
+<body>
+
+
+<script type="text/javascript">
+function callfn(data){
+	console.log(data);
+}
+
+// 1. 创建script标签
+var scriptEl = document.createElement('script');
+scriptEl.src="http://localhost/api-jsonp.php?callback=callfn"
+document.head.appendChild(scriptEl);
+document.head.removeChild(scriptEl);
+</script>
+</body>
+</html>
