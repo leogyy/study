@@ -14,7 +14,7 @@ class Home extends Component{
 
   componentDidMount(){
     console.log('home didMount');
-    let url = '/api/movie/in_theaters';
+    let url = '/api/movie/in_theaters?apikey=0b2bdeda43b5688921839c8ecb20399b';
     // let url = '/index/Wan/wjlei';
     axios.get(url)
     .then((response) =>  {
