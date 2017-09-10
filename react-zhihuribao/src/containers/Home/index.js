@@ -1,7 +1,9 @@
 import React,{Component,PropTypes} from 'react';
 import {Link} from 'react-router';
 import axios from 'axios';
+import {MySlider} from '../../components/';
 import './index.css';
+
 class Home extends Component{
   constructor(props){
     super(props);
@@ -13,6 +15,16 @@ class Home extends Component{
   }
 
   componentDidMount(){
+    let testUrl = 'http://api.xxx.com/movie';
+    axios.get(testUrl)
+    .then((response)=>{
+      console.log(response.data);
+    })
+    .catch((error)=>{
+      console.log(error);
+    });
+
+
     console.log('home didMount');
     let url = '/api/movie/in_theaters?apikey=0b2bdeda43b5688921839c8ecb20399b';
     // let url = '/index/Wan/wjlei';
@@ -54,11 +66,13 @@ class Home extends Component{
 
     return(
       <div>
+       <MySlider />
        Home
        <Link activeClassName="active" to="/">首页</Link>
        <Link to="/detail/123">详情页</Link>
        <Link to="/navpage">导航页</Link>
        {loadingNode}
+
        <div className="movie-list">
           {listNode}
        </div>

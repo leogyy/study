@@ -41,6 +41,8 @@
   "homepage": "",
   "devDependencies": {
     "axios": "^0.15.3",
+    "mockjs": "^1.0.1-beta3",
+    "react-slick": "^0.15.4",
     "rimraf": "^2.6.1"
   }
 }

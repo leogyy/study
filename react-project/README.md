@@ -424,4 +424,24 @@
 
 ### 使用mock做模拟数据
   1. mockjs  (可安装到项目中)
+    * http://mockjs.com/
+    ``` javascript
+      npm install mockjs --save-dev
+    ```
+    * 为什么要使用mockjs？
+      1. 解决使用js json 太长的问题
+      2. 实现特殊的格式， 随机数，图片，地址
+      3. 实现 模拟网络延迟
+    * 功能
+      1. 拦截和模拟ajax请求
+      2. 基于 数据模板 生成模拟数据
+    * 使用
+      1. 数据模板语法
+      2. Mock.mock(url, type, template)
+      3. Mock.setup() 配置延迟
   2. easy-mock(在线版网站)
+
+### React项目脚手架
+  1. create-react-app
+### React常用的包或者库
+  1. antd-design
