@@ -442,6 +442,14 @@
   2. easy-mock(在线版网站)
 
 ### React项目脚手架
-  1. create-react-app
+  1. create-react-app React官方
+    * https://github.com/facebookincubator/create-react-app
+
+
 ### React常用的包或者库
-  1. antd-design
+  1. antd-design (PC端) react组件库
+  2. antd design mobile (移动端)  react组件库
+  3. react-bootstrap   react组件库
+  4. Material UI       react组件
+  5. react-move        react官方组件
+  6. react-slick       react轮播图组件
